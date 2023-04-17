@@ -36,6 +36,7 @@ const renderPokemon = async pokemon => {
     pokemonNumber.innerHTML = data.id
 
     input.value = ''
+    searchPokemon = data.id
   } else {
     pokemonImage.style.display = 'none'
     pokemonName.innerHTML = 'Não Existe.'
