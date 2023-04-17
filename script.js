@@ -4,8 +4,8 @@ const pokemonImage = document.querySelector('.pokemon-img')
 
 const form = document.querySelector('.form')
 const input = document.querySelector('.input-search')
-const buttonPrev = document.querySelector('btn-prev')
-const buttonNext = document.querySelector('btn-next')
+const buttonPrev = document.querySelector('.btn-prev')
+const buttonNext = document.querySelector('.btn-next')
 
 let searchPokemon = 202
 
@@ -48,15 +48,16 @@ form.addEventListener('submit', event => {
   renderPokemon(input.value.toLowerCase())
 })
 
+buttonPrev.addEventListener('click', () => {
+  if (searchPokemon > 1) {
+    searchPokemon -= 1
+    renderPokemon(searchPokemon)
+  }
+})
 
-//             Não Concluido Ainda          //
-
-// buttonPrev.addEventListener('click', () => {
-// alert('prev click')
-// })
-
-// buttonNext.addEventListener('click', () => {
-//  alert('next click')
-// }) 
+buttonNext.addEventListener('click', () => {
+  searchPokemon += 1
+  renderPokemon(searchPokemon)
+})
 
 renderPokemon(searchPokemon)
